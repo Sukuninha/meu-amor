@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Para o Meu Amor 💖</title>
+    <link rel="stylesheet" href="ravena.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <h1>Para o Amor da Minha Vida 💕</h1>
+        <p>Um pedacinho do que eu sinto por você, amor
+        </p>
+    </header>
+
+    <div class="botoes-topo">
+        <button id="botaoMusica">🎵 Tocar música</button>
+        <button id="botaoMensagem">💌 Mensagem Secreta</button>
+    </div>
+    <audio id="musica" src="nossa.mp3" loop></audio>
+
+    <div class="abas">
+        <button class="aba ativa" data-conteudo="inicio">🌹 Início</button>
+        <button class="aba" data-conteudo="voce">💖 Você</button>
+        <button class="aba" data-conteudo="nos">💞 Nós</button>
+        <button class="aba" data-conteudo="sempre">💫 Para Sempre</button>
+    </div>
+
+    <div id="inicio" class="conteudo visivel">
+        <h2>Bem-vinda, meu amor! 💌</h2>
+        <p>Antes de mais nada, quero que você aperte do botão que está escrito "Tocar música" e aprecie essa bela canção enquanto
+          você explora essa pequena homenagem que fiz pra você.
+          <p>Este site foi feito com muito amor, carinho e cuidado, apenas para te lembrar do quanto você é especial e importante para mim. 
+        Eu pensei com muito cuidado em cada detalhe para que seja o mais especial possível para você.Eu fiz tudo isso pra
+        te lembrar o quanto você é especial para mim, meu amor. 🌸</p></p>
+    </div>
+
+    <div id="voce" class="conteudo">
+        <h2>Você é o meu combustível diário 💖</h2>
+        <div class="bloco-foto-unica">
+            <img src="linda.jpeg" alt="Foto de você, meu amor" class="foto-voce">
+        </div>
+        <p>É simplesmente incrível como em tão pouco tempo você se tornou a mulher mais especial da minha vida,
+          eu não imaginaria que isso iria acontecer. Você se tornou parte de mim, minha outra metade.
+          Você é o que me da forças para continuar seguindo mesmo diante do caos e estresse, é a luz que me guia
+          no meio da escuridão do mundo, é a parte favorita do meu dia.
+          <p>Eu tenho um orgulho gigantesco de você, simplesmente a mulher mais perfeita e maravilhosa que eu já 
+            conheci, e eu tenho muito orgulho de chamar você de meu amor.
+          </p>
+        
+      
+        </p>
+    </div>
+
+    <div id="nos" class="conteudo">
+        <h2>Nós dois 💞</h2>
+        <div class="bloco-fotos-duplas">
+            <img src="eu.jpeg" alt="Nossa foto favorita juntos 1" class="foto-dupla">
+            <img src="ela.jpeg" alt="Nossa foto favorita juntos 2" class="foto-dupla">
+        </div>
+        <p>É incrível como a nossa conexão é algo que nem nós mesmos conseguimos explicar.
+          Nesse tempinho nós criamos momentos que para uns não é nada, mas para nós é algo maravilhoso. 
+        Tudo com você se torna mais leve e mais especial.
+        O destinos finalmente entrelaçou nossos caminhos 
+        Eu amo você por completa. Amo seu jeito de ser, amo cada detalhe do seu corpo e do seu rostinho
+        amo seu jeito de pensar, amo a forma como você se dedica com aquilo que gosta, amo como você cuida das
+        crianças, eu amo literalmente tudo em você.
+        Você me faz acreditar que o amor verdadeiro existe. 💫</p>
+    </div>
+
+    <div id="sempre" class="conteudo">
+        <h2>Para sempre vou ficar ao seu lado 🌹</h2>
+        <p>Prometo cuidar de você, te respeitar, te amar incondicionalmente, te mimar, cuidar das crianças e te fazer sorrir todos os dias. 
+        Quero compartihar com você momentos, sonhos e felicidades. A vida fica bem mais leve e colorida ao seu lado, amor
+        Porque, pra mim, o “pra sempre” só faz sentido se for contigo. 💍</p>
+    </div>
+
+    <footer>
+        Feito com muito amor, pelo seu carioquinha 💗
+    </footer>
+
+    <div id="mensagemSecreta" class="modal">
+        <div class="modal-conteudo">
+            <span class="fechar">&times;</span>
+            <h2>💌 Minha Mensagem Secreta 💌</h2>
+            <p>Meu amor, 
+            existe algo que vai além das palavras... é o que sinto por você. 
+            Você é meu abrigo, meu sonho e meu lar. 
+            Se fosse possível, te colocaria dentro do meu coração pra te proteger do mundo. 
+            Obrigado por existir e por me fazer acreditar no amor de verdade. 
+            Te amo, hoje e sempre. 💖</p>
+        </div>
+    </div>
+
+    <div class="coracoes"></div>
+
+    <script>
+        // Controle das abas
+        const abas = document.querySelectorAll('.aba');
+        const conteudos = document.querySelectorAll('.conteudo');
+
+        abas.forEach(aba => {
+            aba.addEventListener('click', () => {
+                // Remove a classe 'ativa' de todas as abas
+                abas.forEach(b => b.classList.remove('ativa'));
+                // Adiciona a classe 'ativa' na aba clicada
+                aba.classList.add('ativa');
+
+                // Esconde todos os conteúdos
+                conteudos.forEach(c => c.style.display = 'none');
+                
+                // Exibe o conteúdo correspondente
+                const alvo = document.getElementById(aba.dataset.conteudo);
+                alvo.style.display = 'block';
+            });
+        });
+
+        // Garantir que a aba "Início" esteja visível ao carregar
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('inicio').style.display = 'block';
+        });
+
+        // Música de fundo
+        const botaoMusica = document.getElementById('botaoMusica');
+        const musica = document.getElementById('musica');
+        let tocando = false;
+
+        botaoMusica.addEventListener('click', () => {
+            if (!tocando) {
+                musica.play();
+                botaoMusica.textContent = "⏸️ Pausar música";
+                tocando = true;
+            } else {
+                musica.pause();
+                botaoMusica.textContent = "🎵 Tocar música";
+                tocando = false;
+            }
+        });
+
+        // Corações flutuando
+        const coracoesContainer = document.querySelector('.coracoes');
+        function criarCoracao() {
+            const coracao = document.createElement('div');
+            coracao.classList.add('coracao');
+            coracao.textContent = ['💖','💕','💞','💘'][Math.floor(Math.random() * 4)];
+            coracao.style.left = Math.random() * 100 + 'vw';
+            coracao.style.animationDuration = (4 + Math.random() * 4) + 's';
+            coracoesContainer.appendChild(coracao);
+            setTimeout(() => coracao.remove(), 7000);
+        }
+        setInterval(criarCoracao, 500);
+
+        // Mensagem secreta
+        const modal = document.getElementById("mensagemSecreta");
+        const botaoMensagem = document.getElementById("botaoMensagem");
+        const fechar = document.querySelector(".fechar");
+
+        botaoMensagem.onclick = () => modal.style.display = "flex";
+        fechar.onclick = () => modal.style.display = "none";
+        window.onclick = (e) => { if (e.target == modal) modal.style.display = "none"; };
+    </script>
+
+</body>
+</html>
